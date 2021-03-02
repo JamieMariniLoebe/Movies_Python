@@ -82,8 +82,16 @@ def display_data(user_input, movies):
         
         highest_rated = sorted(high_rated, key=lambda films: films.rating)
 
-        print(highest_rated)
+        length = len(highest_rated)
 
+        if(highest_rated[length - 1].rating == highest_rated[length-2].rating):
+            print("\n-->Highest rated movies in " + year + " were " + highest_rated[length-1].title + " and " + highest_rated[length - 2].title + "as both had a rating of " + highest_rated[length - 1].rating + "\n")
+
+        else:
+            print("\n-->Highest rated movie in " + year + " was " + highest_rated[length - 1].title + " with a rating of " + highest_rated[length - 1].rating)
+            print("\n")
+
+        
     elif(user_input == 3):
         print("\nShow movie+year for specific langauges")
         return 0
